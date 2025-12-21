@@ -23,7 +23,7 @@ const ThemeToggle = () => {
       onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
       className="
         inline-flex items-center justify-center
-        rounded-full border border-border
+        rounded-full 
         h-9 w-9
         transition-colors
         hover:bg-muted

@@ -1,12 +1,11 @@
-export type SectionId = 'introduction' | 'about' | 'experience' | 'projects' | 'contact';
+export type SectionId = 'portfolio' | 'projects';
 
 export interface INavbarItem{
     id: SectionId;
     title: string;
+    href: string;
 }
 export const navbarItems: INavbarItem[]  = [
-    {id: 'about',title: "About"},
-    {id: 'experience',title: "Experience"},
-    {id: 'projects',title: "Projects"},
-    {id: 'contact',title: "Contact"},
+    {id: 'portfolio',title: "Portfolio", href:"/"},
+    {id: 'projects',title: "Projects", href:"/projects"}
 ];

@@ -8,7 +8,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="py-24 max-w-6xl mx-auto px-4 lg:px-0"
+      className="py-24"
     >
       <h2 className="text-3xl sm:text-4xl font-bold mb-6">
         About 

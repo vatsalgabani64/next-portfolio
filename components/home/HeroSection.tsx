@@ -14,7 +14,7 @@ const HeroSection = () => {
       id="introduction"
       className="relative min-h-screen flex items-center"
     >
-      <div className="mx-auto max-w-6xl px-4 lg:px-0 w-full">
+      <div className="w-full">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
           <div className="lg:col-span-3">
             <p className="font-mono text-sm text-muted-foreground">
@@ -40,14 +40,7 @@ const HeroSection = () => {
                 </Link>
               </Button>
 
-              <Button variant="outline" asChild>
-                <Link href={`mailto:${mailId}`}>
-                  <Mail className="mr-2 h-4 w-4" />
-                  Contact Me
-                </Link>
-              </Button>
-
-              <div className="flex items-center gap-4 ml-1">
+              <div className="flex items-center gap-5 ml-2">
                 {social.map((item) => (
                   <Link
                     key={item.name}

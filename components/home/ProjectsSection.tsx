@@ -4,16 +4,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { PROJECTS } from "@/constants/projects";
+import { ChevronRight } from "lucide-react";
 
 const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen py-24 max-w-6xl mx-auto px-4 lg:px-0 flex flex-col justify-center"
+      className="min-h-screen py-24 flex flex-col justify-center"
     >
-      <h2 className="text-3xl sm:text-4xl font-bold mb-12">
-        Projects
-      </h2>
+      <div className="flex flex-row mb-12 items-center justify-between">
+        <h2 className="text-3xl sm:text-4xl font-bold">
+          Projects
+        </h2>
+        <div className="flex flex-row gap-2 items-center justify-center">
+          <h3 className="text-base font-medium">View All</h3>
+          <ChevronRight className="w-5 h-5"/>
+        </div>
+      </div>
 
       <div className="grid sm:grid-cols-2 gap-10">
         {PROJECTS.map((project) => (

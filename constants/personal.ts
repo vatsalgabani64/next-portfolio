@@ -1,5 +1,6 @@
-import { Github, Linkedin, Mail } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import type { IconType } from "react-icons";
+import { Mail } from "lucide-react";
 
 export interface IPersonalInfo {
   name: string;
@@ -9,7 +10,7 @@ export interface IPersonalInfo {
   social: {
     name: string;
     url: string;
-    icon: LucideIcon;
+    icon: IconType;
   }[];
   intro: {
     line1: string;
@@ -32,12 +33,12 @@ export const PERSONAL_INFO: IPersonalInfo = {
     {
       name: "GitHub",
       url: "https://github.com/vatsalgabani64/",
-      icon: Github,
+      icon: SiGithub,
     },
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/vatsal-gabani/",
-      icon: Linkedin,
+      icon: SiLinkedin,
     },
     {
       name: "Email",

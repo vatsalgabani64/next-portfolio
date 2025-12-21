@@ -11,7 +11,7 @@ const ExperienceSection = () => {
   return (
     <section
       id="experience"
-      className="min-h-screen py-24 max-w-6xl mx-auto px-4 lg:px-0 flex flex-col justify-center"
+      className="min-h-screen py-24 flex flex-col justify-center"
     >
       <h2 className="text-3xl sm:text-4xl font-bold mb-12">
         Experience
