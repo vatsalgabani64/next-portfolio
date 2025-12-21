@@ -3,11 +3,39 @@ import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Metadata } from "next";
-import { SITE_INFO } from "@/constants/siteInfo";
+import { SITE_INFO } from "@/constants/site";
 
 export const metadata: Metadata = {
-  title: SITE_INFO.name,
-  description: "Full-stack developer building modern web applications.",
+  title: {
+    default: SITE_INFO.title,
+    template: `%s · ${SITE_INFO.name}`,
+  },
+  description: SITE_INFO.description,
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
+    openGraph: {
+    title: SITE_INFO.title,
+    description: SITE_INFO.description,
+    url: SITE_INFO.url,
+    siteName: SITE_INFO.name,
+    type: "website",
+    images: [
+      {
+        url: SITE_INFO.ogImage,
+        width: 1200,
+        height: 630,
+        alt: SITE_INFO.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_INFO.title,
+    description: SITE_INFO.description,
+    images: [SITE_INFO.ogImage],
+  },
 };
 
 

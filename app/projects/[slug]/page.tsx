@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { PROJECTS } from "@/constants/projects";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
-import { SITE_INFO } from "@/constants/siteInfo";
+import { SITE_INFO } from "@/constants/site";
 
 interface ProjectPageProps {
   params: Promise<{

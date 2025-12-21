@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PROJECTS } from "@/constants/projects";
 import { Card, CardContent } from "@/components/ui/card";
 import { Metadata } from "next";
-import { SITE_INFO } from "@/constants/siteInfo";
+import { SITE_INFO } from "@/constants/site";
 
 export const metadata: Metadata = {
   title: `Projects · ${SITE_INFO.name}`,
