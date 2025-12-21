@@ -1,13 +1,17 @@
+import HeroSection from "@/components/home/HeroSection";
+import AboutSection from "@/components/home/AboutSection";
+import ExperienceSection from "@/components/home/ExperienceSection";
+import ProjectsSection from "@/components/home/ProjectsSection";
+import ContactSection from "@/components/home/ContactSection";
+
 export default function HomePage() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20">
-      <h1 className="text-4xl font-bold mb-4">
-        Hi, I’m Vatsal 👋
-      </h1>
-
-      <p className="text-lg text-gray-600">
-        Frontend & Full-Stack Developer building modern web applications.
-      </p>
-    </section>
+    <>
+      <HeroSection />
+      <AboutSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      <ContactSection />
+    </>
   );
 }
