@@ -1,11 +1,10 @@
 export type SectionId = 'portfolio' | 'projects';
 
 export interface INavbarItem{
-    id: SectionId;
-    title: string;
+    label: string;
     href: string;
 }
 export const navbarItems: INavbarItem[]  = [
-    {id: 'portfolio',title: "Portfolio", href:"/"},
-    {id: 'projects',title: "Projects", href:"/projects"}
+    {label: "Portfolio", href:"/"},
+    {label: "Projects", href:"/projects"}
 ];

@@ -6,12 +6,12 @@ import ContactSection from "@/components/home/ContactSection";
 
 export default function HomePage() {
   return (
-    <>
+    <div className="flex-1 mx-auto w-full max-w-3xl px-4 lg:px-0">
       <HeroSection />
       <AboutSection />
       <ExperienceSection />
       <ProjectsSection />
       <ContactSection />
-    </>
+    </div>
   );
 }

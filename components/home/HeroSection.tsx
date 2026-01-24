@@ -1,10 +1,10 @@
-"use client";
-
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowDown, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PERSONAL_INFO } from "@/constants/personal";
+import { FileText } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { BsFileText } from "react-icons/bs";
+import { FiFileText } from "react-icons/fi";
 
 const HeroSection = () => {
   const { name, intro, profileImage, resume, social, mailId } = PERSONAL_INFO;
@@ -22,7 +22,7 @@ const HeroSection = () => {
             </p>
 
             <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-              {name}.
+              {name}
             </h1>
 
             <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-muted-foreground">
@@ -30,12 +30,13 @@ const HeroSection = () => {
             </h2>
 
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-              {intro.description}
+              {/* {intro.description} */}
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-1">
               <Button asChild>
                 <Link href={resume} target="_blank">
+                  <FiFileText className="h-5 w-5"/>
                   View Resume
                 </Link>
               </Button>

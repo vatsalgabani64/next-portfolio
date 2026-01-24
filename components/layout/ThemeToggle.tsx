@@ -1,32 +1,50 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-const ThemeToggle = () => {
+export const useThemeToggle = () => {
   const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Prevent hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  const currentTheme =
+    theme === "system" ? systemTheme : theme;
+
+  const toggleTheme = () => {
+    if (!currentTheme) return;
+    setTheme(currentTheme === "dark" ? "light" : "dark");
+  };
+
+  return {
+    mounted,
+    currentTheme,
+    toggleTheme,
+  };
+};
+
+import { Moon, Sun } from "lucide-react";
+import { Button } from "../ui/button";
+
+const ThemeToggleButton = () => {
+  const { mounted, currentTheme, toggleTheme } =
+    useThemeToggle();
+
   if (!mounted) return null;
 
-  const currentTheme = theme === "system" ? systemTheme : theme;
-
   return (
-    <button
+    <Button
+      variant="ghost"
       aria-label="Toggle theme"
-      onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
+      onClick={toggleTheme}
       className="
-        inline-flex items-center justify-center
-        rounded-full 
-        h-9 w-9
+        inline-flex items-center justify-center 
+        rounded-md hover:bg-accent
+        h-9 w-9 p-4
         transition-colors
-        hover:bg-muted
       "
     >
       {currentTheme === "dark" ? (
@@ -34,8 +52,8 @@ const ThemeToggle = () => {
       ) : (
         <Moon className="h-4 w-4" />
       )}
-    </button>
+    </Button>
   );
 };
 
-export default ThemeToggle;
+export default ThemeToggleButton;
