@@ -15,20 +15,14 @@ const Navbar = () => {
   return (
     <div
       className={clsx(
-        "fixed top-0 left-0 right-0 z-50 py-6",
-        "mx-auto w-full max-w-3xl px-4 lg:px-0",
-        "bg-background/80 backdrop-blur-md",
-        "border-b border-border/50",
-        "transition-transform duration-300",
-        // direction === "down" ? "-translate-y-full" : "translate-y-0"
+        "container mx-auto max-w-3xl px-4 sticky top-0 z-50 rounded-md py-4 backdrop-blur-sm",
       )}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <Link href="/">
             <Image
-              className="h-12 w-12 rounded-md border border-gray-200 bg-blue-300 transition-all duration-300 ease-in-out hover:scale-90 dark:bg-yellow-300"
-              // src={"/assets/profile.jpg"}
+              className="h-12 w-12 rounded-md transition-all duration-300 ease-in-out hover:scale-90"
               src={"/assets/profile.jpg"}
               alt={"logo"}
               width={50}
