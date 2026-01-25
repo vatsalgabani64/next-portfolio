@@ -23,7 +23,7 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="mt-20 flex flex-col">
       <SectionHeading heading="Experience"/>
-      <div className="flex flex-col gap-1 mt-4">
+      <div className="flex flex-col gap-1">
         {EXPERIENCE.map((experience, index) => (
           <ExperienceCard
             key={experience.company}
@@ -157,15 +157,13 @@ const ExperienceCard = ({experience,isOpen,onToggle,}: {experience: IExperienceI
 
                   <div className="flex flex-wrap gap-2">
                     {experience.technologies.map((tech, i) => (
-                      <Link
+                      <div
                         key={i}
-                        href={tech.href}
-                        target="_blank"
-                        className="inline-flex items-center rounded-md border border-dashed border-black/20 bg-black/5 px-2 py-1 text-sm text-black shadow-[inset_0_1px_2px_rgba(0,0,0,0.08)] transition-colors hover:bg-black/10 dark:border-white/30 dark:bg-white/15 dark:text-white dark:hover:bg-white/20"
+                        className="inline-flex items-center rounded-md border-black/20 bg-black/5 px-2 py-1 text-sm text-black shadow-[inset_0_1px_2px_rgba(0,0,0,0.08)] transition-colors hover:bg-black/10 dark:border-white/30 dark:bg-white/15 dark:text-white dark:hover:bg-white/20"
                       >
                         {tech.icon}
                         <span className="ml-1.5 font-semibold">{tech.name}</span>
-                      </Link>
+                      </div>
                     ))}
                   </div>
                 </div>

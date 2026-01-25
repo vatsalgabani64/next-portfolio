@@ -94,16 +94,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 </section>
 
 
-      <ul className="mt-8 flex flex-wrap gap-3">
-        {project.tech.map((tech) => (
-          <li
-            key={tech}
-            className="text-xs font-mono px-2 py-1 rounded-md bg-muted text-muted-foreground"
-          >
-            {tech}
-          </li>
-        ))}
-      </ul>
+      {project.technologies.map((tech, i) => (
+            <div
+              key={i}
+              className="inline-flex items-center rounded-md border-black/20 bg-black/5 px-2 py-1 text-sm text-black shadow-[inset_0_1px_2px_rgba(0,0,0,0.08)] transition-colors hover:bg-black/10 dark:border-white/30 dark:bg-white/15 dark:text-white dark:hover:bg-white/20"
+            >
+              {tech.icon}
+              <span className="ml-1.5 font-semibold">{tech.name}</span>
+            </div>
+          ))}
 
       <div className="mt-10 flex gap-4">
         {project.github && (
@@ -114,9 +113,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </Button>
         )}
 
-        {project.demo && (
+        {project.liveUrl && (
           <Button variant="outline" asChild>
-            <Link href={project.demo} target="_blank">
+            <Link href={project.liveUrl} target="_blank">
               Live Demo
             </Link>
           </Button>

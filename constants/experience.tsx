@@ -4,7 +4,6 @@ import { Icon } from "@iconify/react";
 
 export interface Technology {
   name: string;
-  href: string;
   icon?: React.ReactNode;
 }
 export interface IExperienceItem {
@@ -37,22 +36,18 @@ export const EXPERIENCE: IExperienceItem[] = [
     technologies: [
       {
         name: "React",
-        href: "https://reactjs.org/",
         icon: <Icon icon="logos:react" />
       },
       {
         name: "Next.js",
-        href: "https://nextjs.org/",
         icon: <Icon icon="logos:nextjs-icon" />
       },
       {
         name: "Tailwind CSS",
-        href: "https://tailwindcss.com/",
         icon: <Icon icon="logos:tailwindcss-icon" />
       },
       {
         name: "TypeScript",
-        href: "https://www.typescriptlang.org/",
         icon: <Icon icon="logos:typescript-icon" />
       },
     ]
@@ -74,17 +69,14 @@ export const EXPERIENCE: IExperienceItem[] = [
     technologies: [
       {
         name: "Next.js",
-        href: "https://nextjs.org/",
         icon: <Icon icon="logos:nextjs-icon" />
       },
       {
         name: "Django",
-        href: "https://www.djangoproject.com/",
         icon: <Icon icon="logos:django-icon" />
       },
       {
         name: "Tailwind CSS",
-        href: "https://tailwindcss.com/",
         icon: <Icon icon="logos:tailwindcss-icon" />
       },
     ]
