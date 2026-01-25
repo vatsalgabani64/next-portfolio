@@ -6,6 +6,7 @@ import Link from "next/link";
 import { SiGithub } from "react-icons/si";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { TechButton } from "../common/TechButton";
+import { ROUTES } from "@/constants/routes";
 
 export const ProjectCard = ({ project }: { project: IProject }) => {
   return (
@@ -18,7 +19,7 @@ export const ProjectCard = ({ project }: { project: IProject }) => {
             "
     >
       <CardHeader className="p-0">
-        <Link href={`/projects/${project.slug}`}>
+        <Link href={ROUTES.ProjectDetails(project.slug)}>
           <div className="relative overflow-hidden rounded-t-lg border border-border bg-background group">
             <Image
               src={project.image}
@@ -72,7 +73,7 @@ export const ProjectCard = ({ project }: { project: IProject }) => {
                     <SiGithub className="h-5 w-5" />
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent>Visit website</TooltipContent>
+                <TooltipContent>Visit Source Code</TooltipContent>
               </Tooltip>
             )}
           </div>

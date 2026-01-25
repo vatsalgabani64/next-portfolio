@@ -1,3 +1,5 @@
+import { ROUTES } from "./routes";
+
 export type SectionId = 'portfolio' | 'projects';
 
 export interface INavbarItem{
@@ -5,6 +7,6 @@ export interface INavbarItem{
     href: string;
 }
 export const navbarItems: INavbarItem[]  = [
-    {label: "Portfolio", href:"/"},
-    {label: "Projects", href:"/projects"}
+    {label: "Portfolio", href:ROUTES.Home},
+    {label: "Projects", href:ROUTES.Projects}
 ];

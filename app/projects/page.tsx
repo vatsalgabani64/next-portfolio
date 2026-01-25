@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="max-w-6xl mx-auto px-4 lg:px-0 py-24">
+    <main className="max-w-3xl mx-auto px-4 my-10">
       <header className="mb-16">
         <h1 className="text-4xl sm:text-5xl font-bold mb-4">Projects</h1>
         <p className="max-w-2xl text-muted-foreground text-lg">

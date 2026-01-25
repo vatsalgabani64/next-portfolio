@@ -8,15 +8,21 @@ export interface Technology {
   icon?: React.ReactNode;
 }
 
+export interface ITechStackItem {
+  name: string;
+  description: string;
+}
+
 export interface IProject {
   slug: string;
   title: string;
   description: string;
-  technologies: Technology[];
   image: string;
-  features: IProjectFeature[];
   github?: string;
   liveUrl?: string;
+  technologies: Technology[];
+  features: IProjectFeature[];
+  techStack: ITechStackItem[];
 }
 export const PROJECTS: IProject[] = [
   {
@@ -24,6 +30,9 @@ export const PROJECTS: IProject[] = [
     title: "Booking Web App",
     description:
       "A full-stack booking platform with authentication, property listings, messaging, and a clean UI.",
+    image: "/projects/booking.png",
+
+    github: "https://github.com/vatsalgabani64/booking-app",
     // "React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS",
     technologies: [
       {
@@ -43,8 +52,6 @@ export const PROJECTS: IProject[] = [
         icon: <Icon icon="logos:tailwindcss-icon" />,
       },
     ],
-    image: "/projects/booking.png",
-    github: "https://github.com/vatsalgabani64/booking-app",
     features: [
       {
         title: "User Authentication",
@@ -72,6 +79,28 @@ export const PROJECTS: IProject[] = [
           "The application is optimized for desktops, tablets, and mobile devices.",
       },
     ],
+    techStack: [
+      {
+        name: "Frontend",
+        description:
+          "Built using React with Tailwind CSS for a responsive, component-driven UI.",
+      },
+      {
+        name: "Backend",
+        description:
+          "Node.js with Express handles REST APIs, authentication, and business logic.",
+      },
+      {
+        name: "Database",
+        description:
+          "MongoDB stores users, listings, bookings, and messages efficiently.",
+      },
+      {
+        name: "Authentication",
+        description:
+          "JWT-based authentication ensures secure access and session handling.",
+      },
+    ],
   },
   {
     slug: "socket-chat",
@@ -79,6 +108,9 @@ export const PROJECTS: IProject[] = [
     description:
       "A responsive chat system with live messaging, online status, and WebSocket-powered updates.",
     // tech: ["React", "Node.js", "Socket.io", "Express", "Tailwind CSS"],
+    image: "/projects/chat.png",
+    github: "https://github.com/vatsalgabani64/socket-chat",
+    liveUrl: "https://socket-chat-dzal.onrender.com/",
     technologies: [
       {
         name: "React",
@@ -101,9 +133,6 @@ export const PROJECTS: IProject[] = [
         icon: <Icon icon="logos:tailwindcss-icon" />,
       },
     ],
-    image: "/projects/chat.png",
-    github: "https://github.com/vatsalgabani64/socket-chat",
-    liveUrl: "https://socket-chat-dzal.onrender.com/",
     features: [
       {
         title: "Real-Time Messaging",
@@ -126,6 +155,38 @@ export const PROJECTS: IProject[] = [
       {
         title: "Responsive UI",
         description: "Optimized chat experience across all screen sizes.",
+      },
+    ],
+    techStack: [
+      {
+        name: "Frontend",
+        description:
+          "Built with React to deliver a fast, component-driven chat interface with real-time updates.",
+      },
+      {
+        name: "Backend",
+        description:
+          "Node.js with Express powers the REST APIs and acts as the core server for real-time messaging.",
+      },
+      {
+        name: "Real-Time Communication",
+        description:
+          "Socket.io enables bidirectional, low-latency communication for instant message delivery and live updates.",
+      },
+      {
+        name: "Database",
+        description:
+          "MongoDB stores users, conversations, and messages, allowing efficient querying and scalability.",
+      },
+      {
+        name: "State & Presence",
+        description:
+          "Socket events are used to track online status, typing indicators, and user presence in real time.",
+      },
+      {
+        name: "UI & Responsiveness",
+        description:
+          "The interface is styled with Tailwind CSS and optimized for desktop and mobile devices.",
       },
     ],
   },
