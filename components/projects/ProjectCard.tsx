@@ -25,7 +25,7 @@ export const ProjectCard = ({ project }: { project: IProject }) => {
               alt={project.title}
               width={600}
               height={350}
-              className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-52 object-cover transition-transform duration-300 group-hover:scale-105"
             />
 
             {/* Redirect icon */}

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "react-github-calendar/tooltips.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -130,4 +131,16 @@ html {
 
 .text-secondary {
   @apply text-[#909092] dark:text-[#909092];
+}
+
+.github-card-shadow {
+  box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.08),
+    inset 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.dark .github-card-shadow {
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.06),
+    inset 0 1px 4px rgba(255, 255, 255, 0.03);
 }

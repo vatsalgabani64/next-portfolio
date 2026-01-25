@@ -3,6 +3,8 @@ import AboutSection from "@/components/home/AboutSection";
 import ExperienceSection from "@/components/home/ExperienceSection";
 import ProjectsSection from "@/components/home/ProjectsSection";
 import ContactSection from "@/components/home/ContactSection";
+import { GitHubCalendar } from "react-github-calendar";
+import GithubSection from "@/components/home/GithubSection";
 
 export default function HomePage() {
   return (
@@ -11,6 +13,7 @@ export default function HomePage() {
       <AboutSection />
       <ExperienceSection />
       <ProjectsSection />
+      <GithubSection />
       <ContactSection />
     </div>
   );

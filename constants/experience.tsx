@@ -21,7 +21,7 @@ export interface IExperienceItem {
 export const EXPERIENCE: IExperienceItem[] = [
   {
     company: "ProjectTree",
-    logo: "/company/projecttree.jpg",
+    logo: "/company/ProjectTree.jpg",
     website: "https://projecttree.in",
     linkedin: "https://www.linkedin.com/company/pttech/",
     role: "Software Engineer Intern",
