@@ -17,6 +17,7 @@ export interface IProject {
   slug: string;
   title: string;
   description: string;
+  overview: string;
   image: string;
   github?: string;
   liveUrl?: string;
@@ -28,8 +29,8 @@ export const PROJECTS: IProject[] = [
   {
     slug: "booking-web-app",
     title: "Booking Web App",
-    description:
-      "A full-stack booking platform with authentication, property listings, messaging, and a clean UI.",
+    description: "A full-stack booking platform with authentication, property listings, messaging, and a clean UI.",
+    overview: "The Booking app is a Web-based Rentals application allowing users to browse, book and list accommodations. The application utilizes the MERN stack for its robustness and flexibility, with Tailwind CSS for a modern and responsive user interface.",
     image: "/projects/booking.png",
 
     github: "https://github.com/vatsalgabani64/booking-app",
@@ -105,8 +106,8 @@ export const PROJECTS: IProject[] = [
   {
     slug: "socket-chat",
     title: "Socket Chat",
-    description:
-      "A responsive chat system with live messaging, online status, and WebSocket-powered updates.",
+    description: "A responsive chat system with live messaging, online status, and WebSocket-powered updates.",
+    overview: "Socket Chat is a real-time web-based messaging application that enables users to communicate instantly with live message delivery, online presence, and dynamic updates. The application is built using React, Node.js, and Socket.io, with MongoDB for data persistence and Tailwind CSS for a responsive, modern user interface.",
     // tech: ["React", "Node.js", "Socket.io", "Express", "Tailwind CSS"],
     image: "/projects/chat.png",
     github: "https://github.com/vatsalgabani64/socket-chat",

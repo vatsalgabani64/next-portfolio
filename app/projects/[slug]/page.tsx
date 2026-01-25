@@ -56,73 +56,81 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <main className="max-w-3xl mx-auto px-4 my-10 flex flex-col space-y-6">
-      <div>
-        <Link
-          href={ROUTES.Projects}
-          className="flex flex-row gap-2 items-center text-md text-muted-foreground hover:underline hover:decoration-1 hover:underline-offset-5"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Projects
-        </Link>
+    <main className="max-w-3xl mx-auto px-4 my-10 flex flex-col space-y-12">
+      <div className="flex flex-col space-y-6">
+        <div>
+          <Link
+            href={ROUTES.Projects}
+            className="flex flex-row gap-2 items-center text-md text-muted-foreground hover:underline hover:decoration-1 hover:underline-offset-5"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Projects
+          </Link>
+        </div>
+
+        <div className="flex flex-row justify-between items-center">
+          <h1 className="text-4xl sm:text-5xl font-bold items-center">
+            {project.title}
+          </h1>
+        </div>
+
+        <div className="">
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={900}
+            height={500}
+            className="rounded-lg border border-border"
+          />
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech, i) => (
+            <TechButton key={i} icon={tech.icon} name={tech.name} />
+          ))}
+        </div>
+
+        <div className="flex flex-row gap-3">
+          {project.liveUrl && (
+            <Button>
+              <Link
+                href={project.liveUrl}
+                target="_blank"
+                className="flex flex-row gap-2 items-center"
+              >
+                <Globe className="h-7 w-7" />
+                Visit website
+              </Link>
+            </Button>
+          )}
+          {project.github && (
+            <Button variant="outline">
+              <Link
+                href={project.github}
+                target="_blank"
+                className="flex flex-row gap-2 items-center"
+              >
+                <SiGithub className="h-7 w-7" />
+                View Source Code
+              </Link>
+            </Button>
+          )}
+        </div>
       </div>
 
-      <div className="flex flex-row justify-between items-center">
-        <h1 className="text-4xl sm:text-5xl font-bold items-center">
-          {project.title}
-        </h1>
-      </div>
-
-      <div className="">
-        <Image
-          src={project.image}
-          alt={project.title}
-          width={900}
-          height={500}
-          className="rounded-lg border border-border"
-        />
-      </div>
-
-      <div className="flex flex-wrap gap-2">
-        {project.technologies.map((tech, i) => (
-          <TechButton key={i} icon={tech.icon} name={tech.name} />
-        ))}
-      </div>
-
-      <div className="flex flex-row gap-3">
-        {project.liveUrl && (
-          <Button>
-            <Link
-              href={project.liveUrl}
-              target="_blank"
-              className="flex flex-row gap-2 items-center"
-            >
-              <Globe className="h-7 w-7" />
-              Visit website
-            </Link>
-          </Button>
-        )}
-        {project.github && (
-          <Button variant="outline">
-            <Link
-              href={project.github}
-              target="_blank"
-              className="flex flex-row gap-2 items-center"
-            >
-              <SiGithub className="h-7 w-7" />
-              View Source Code
-            </Link>
-          </Button>
-        )}
-      </div>
-
-      <div>
+      {/* <div>
         <p className=" text-muted-foreground leading-relaxed">
           {project.description}
         </p>
-      </div>
+      </div> */}
 
-      <section className="mt-12">
+      <section className="">
+        <h2 className="text-3xl sm:text-4xl font-semibold mb-4">Overiew</h2>
+        <p className=" text-secondary leading-relaxed">
+          {project.overview}
+        </p>
+      </section>
+      <section className="">
         <h2 className="text-3xl sm:text-4xl font-semibold mb-4">Features</h2>
         <div className="flex flex-col gap-2 text-md font-normal">
           {project.features.map((feature, i) => (
@@ -138,7 +146,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      <section className="mt-12">
+      <section className="">
         <h2 className="text-3xl sm:text-4xl font-semibold mb-4">Tech Stack</h2>
 
         <div className="flex flex-col gap-3">
