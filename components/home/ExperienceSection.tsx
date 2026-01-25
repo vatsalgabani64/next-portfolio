@@ -9,6 +9,7 @@ import { useState } from "react";
 import { SiLinkedin } from "react-icons/si";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import SectionHeading from "../common/SectionHeading";
+import { TechButton } from "../common/TechButton";
 
 const ExperienceSection = () => {
   const [openSet, setOpenSet] = useState<Set<number>>(() => new Set([0]));
@@ -22,7 +23,7 @@ const ExperienceSection = () => {
   };
   return (
     <section id="experience" className="mt-20 flex flex-col">
-      <SectionHeading heading="Experience"/>
+      <SectionHeading heading="Experience" />
       <div className="flex flex-col gap-1">
         {EXPERIENCE.map((experience, index) => (
           <ExperienceCard
@@ -39,7 +40,7 @@ const ExperienceSection = () => {
 
 export default ExperienceSection;
 
-const ExperienceCard = ({experience,isOpen,onToggle,}: {experience: IExperienceItem;isOpen: boolean;onToggle: () => void;}) => {
+const ExperienceCard = ({experience,isOpen,onToggle}: {experience: IExperienceItem;isOpen: boolean;onToggle: () => void;}) => {
   return (
     <div className="rounded-lg flex flex-col">
       {/* HEADER (STATIC)*/}
@@ -115,7 +116,9 @@ const ExperienceCard = ({experience,isOpen,onToggle,}: {experience: IExperienceI
 
           {/* Right: date + location */}
           <div className="text-right text-muted-foreground ">
-            <h6 className="text-md font-medium text-foreground">{experience.period}</h6>
+            <h6 className="text-md font-medium text-foreground">
+              {experience.period}
+            </h6>
             <p className="text-sm">{experience.location}</p>
           </div>
         </div>
@@ -157,26 +160,24 @@ const ExperienceCard = ({experience,isOpen,onToggle,}: {experience: IExperienceI
 
                   <div className="flex flex-wrap gap-2">
                     {experience.technologies.map((tech, i) => (
-                      <div
-                        key={i}
-                        className="inline-flex items-center rounded-md border-black/20 bg-black/5 px-2 py-1 text-sm text-black shadow-[inset_0_1px_2px_rgba(0,0,0,0.08)] transition-colors hover:bg-black/10 dark:border-white/30 dark:bg-white/15 dark:text-white dark:hover:bg-white/20"
-                      >
-                        {tech.icon}
-                        <span className="ml-1.5 font-semibold">{tech.name}</span>
-                      </div>
+                      <TechButton key={i} icon={tech.icon} name={tech.name} />
                     ))}
                   </div>
                 </div>
               )}
 
               {/* Description */}
-              <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
+              <div className="flex flex-col text-secondary text-md font-normal">
                 {experience.description.map((point, i) => (
-                  <li key={i} className="text-md font-normal leading-relaxed">
-                    {point}
-                  </li>
+                  <p
+                    key={i}
+                    dangerouslySetInnerHTML={{
+                      __html: `• ${point}`,
+                    }}
+                    className=""
+                  />
                 ))}
-              </ul>
+              </div>
             </div>
           </motion.div>
         )}

@@ -9,7 +9,7 @@ interface ProjectListProps {
 
 export const ProjectList = ({ projects, className }: ProjectListProps) => {
   return (
-    <div className="grid sm:grid-cols-2 gap-10 mt-4">
+    <div className="grid sm:grid-cols-2 gap-4 mt-4">
       {projects.map((project) => (
         <ProjectCard key={project.title} project={project} />
       ))}

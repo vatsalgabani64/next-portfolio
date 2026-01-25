@@ -12,20 +12,21 @@ const HeroSection = () => {
   return (
     <section
       id="introduction"
-      className="relative min-h-screen flex items-center"
+      className="relative mt-10 flex items-center"
     >
       <div className="w-full">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
           <div className="lg:col-span-3">
-            <p className="font-mono text-sm text-muted-foreground">
+            {/* <p className="font-mono text-sm text-muted-foreground"> */}
+            <p className="mt-3 text-base sm:text-md font-mono text-muted-foreground">
               {intro.line1}
             </p>
 
-            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+            <h1 className="mt-2 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
               {name}
             </h1>
 
-            <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-muted-foreground">
+            <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-muted-foreground">
               {intro.headline}
             </h2>
 

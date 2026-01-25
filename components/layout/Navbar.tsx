@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <Link href="/">
             <Image
-              className="h-12 w-12 rounded-md transition-all duration-300 ease-in-out hover:scale-90"
+              className="h-12 w-12 rounded-md transition-all duration-200 ease-in-out hover:scale-95"
               src={"/assets/profile.jpg"}
               alt={"logo"}
               width={50}

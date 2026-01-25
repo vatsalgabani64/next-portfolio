@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiGithub } from "react-icons/si";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { TechButton } from "../common/TechButton";
 
 export const ProjectCard = ({ project }: { project: IProject }) => {
   return (
@@ -82,13 +83,7 @@ export const ProjectCard = ({ project }: { project: IProject }) => {
         </p>
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech, i) => (
-            <div
-              key={i}
-              className="inline-flex items-center rounded-md border-black/20 bg-black/5 px-2 py-1 text-sm text-black shadow-[inset_0_1px_2px_rgba(0,0,0,0.08)] transition-colors hover:bg-black/10 dark:border-white/30 dark:bg-white/15 dark:text-white dark:hover:bg-white/20"
-            >
-              {tech.icon}
-              <span className="ml-1.5 font-semibold">{tech.name}</span>
-            </div>
+            <TechButton key={i} icon={tech.icon} name={tech.name} />
           ))}
         </div>
       </CardContent>

@@ -127,3 +127,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+.text-secondary {
+  @apply text-[#909092] dark:text-[#909092];
+}
