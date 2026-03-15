@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_INFO.url}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1 : 0.8,
+    priority: route === ROUTES.Home ? 1 : 0.8,
   }));
 
   const projectRoutes = PROJECTS.map((project) => ({
