@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { PERSONAL_INFO } from "@/constants/personal";
-import { FileText } from "lucide-react";
+import { ROUTES } from "@/constants/routes";
 import Image from "next/image";
 import Link from "next/link";
-import { BsFileText } from "react-icons/bs";
 import { FiFileText } from "react-icons/fi";
 
 const HeroSection = () => {
-  const { name, intro, profileImage, resume, social, mailId } = PERSONAL_INFO;
+  const { name, intro, profileImage, social } = PERSONAL_INFO;
 
   return (
     <section
@@ -15,14 +14,14 @@ const HeroSection = () => {
       className="relative mt-10 flex items-center"
     >
       <div className="w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-          <div className="lg:col-span-3">
+        <div className="grid grid-cols-1 lg:grid-cols-6 gap-12 items-center">
+          <div className="lg:col-span-4">
             {/* <p className="font-mono text-sm text-muted-foreground"> */}
             <p className="mt-3 text-base sm:text-md font-mono text-muted-foreground">
               {intro.line1}
             </p>
 
-            <h1 className="mt-2 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+            <h1 className="mt-2 text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight">
               {name}
             </h1>
 
@@ -36,7 +35,7 @@ const HeroSection = () => {
 
             <div className="mt-8 flex flex-wrap items-center gap-1">
               <Button asChild>
-                <Link href={resume} target="_blank">
+                <Link href={ROUTES.Resume}>
                   <FiFileText className="h-5 w-5"/>
                   View Resume
                 </Link>
@@ -62,8 +61,8 @@ const HeroSection = () => {
             <Image
               src={profileImage}
               alt={`${name} profile`}
-              width={260}
-              height={260}
+              width={200}
+              height={200}
               priority
               className="rounded-full object-cover border border-border shadow-lg"
             />

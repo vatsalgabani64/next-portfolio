@@ -1,19 +1,14 @@
+import { TechButton } from "@/components/common/TechButton";
+import { Button } from "@/components/ui/button";
+import { PROJECTS } from "@/constants/projects";
+import { ROUTES } from "@/constants/routes";
+import { SITE_INFO } from "@/constants/site";
+import { ArrowLeft, Globe } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { PROJECTS } from "@/constants/projects";
-import { Button } from "@/components/ui/button";
-import { Metadata } from "next";
-import { SITE_INFO } from "@/constants/site";
-import { ArrowLeft, Globe } from "lucide-react";
 import { SiGithub } from "react-icons/si";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { TechButton } from "@/components/common/TechButton";
-import { ROUTES } from "@/constants/routes";
 
 interface ProjectPageProps {
   params: Promise<{
@@ -35,7 +30,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.title} · ${SITE_INFO.name}`,
+    title: `${project.title}`,
     description: project.description,
   };
 }
@@ -56,7 +51,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <main className="max-w-3xl mx-auto px-4 my-10 flex flex-col space-y-12">
+    <div className="my-10 flex flex-col space-y-12">
       <div className="flex flex-col space-y-6">
         <div>
           <Link
@@ -162,6 +157,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           ))}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

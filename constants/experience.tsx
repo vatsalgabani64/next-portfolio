@@ -24,11 +24,11 @@ export const EXPERIENCE: IExperienceItem[] = [
     logo: "/company/ProjectTree.jpg",
     website: "https://projecttree.in",
     linkedin: "https://www.linkedin.com/company/pttech/",
-    role: "Software Engineer Intern",
+    role: "Software Engineer",
     period: "Aug 2025 - Present",
     location: "Surat, Gujarat",
     description: [
-      "Developed modular UI components using React, Shadcn UI, and Tailwind CSS.",
+      "Developed modular UI components using Next.js, React, Shadcn UI, and Tailwind CSS.",
       "Implemented complex quoting, scanning, and equipment management screens.",
       "Improved component reusability, state handling, and API-driven form workflows.",
       "Optimized UI performance and resolved real-world user flow issues.",

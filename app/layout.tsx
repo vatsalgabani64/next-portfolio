@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     description: SITE_INFO.description,
     images: [SITE_INFO.ogImage],
   },
+  verification:{
+    google:"AoaXqB-W-kPNQUp_9VwKYo7dN4f_KWkd20dwR6AvmbE"
+  }
 };
 
 
@@ -53,7 +56,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <main className="flex-1 mx-auto w-full max-w-3xl px-4">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

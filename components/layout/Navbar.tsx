@@ -20,7 +20,7 @@ const Navbar = () => {
       )}
     >
       <div className="flex items-center justify-between px-6">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-5">
           <Link href={ROUTES.Home}>
             <Image
               className="h-12 w-12 rounded-md transition-all duration-200 ease-in-out hover:scale-95"
@@ -45,7 +45,6 @@ const Navbar = () => {
                   href={item.href}
                   className={clsx(
                     "font-mono text-base transition-colors",
-                    "transition-all duration-1000 ease-in-out hover:underline hover:decoration-2 hover:underline-offset-5",
                     isActive
                       ? "font-semibold text-foreground"
                       : "font-normal text-foreground/70 hover:text-foreground",

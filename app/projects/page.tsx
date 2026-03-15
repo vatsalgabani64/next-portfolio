@@ -1,16 +1,15 @@
 import { ProjectList } from "@/components/projects/ProjectList";
 import { PROJECTS } from "@/constants/projects";
-import { SITE_INFO } from "@/constants/site";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Projects · ${SITE_INFO.name}`,
+  title: `Projects`,
   description: "A collection of full-stack and frontend projects.",
 };
 
 export default function ProjectsPage() {
   return (
-    <main className="max-w-3xl mx-auto px-4 my-10">
+    <div className="my-10">
       <header className="mb-16">
         <h1 className="text-4xl sm:text-5xl font-bold mb-4">Projects</h1>
         <p className="max-w-2xl text-muted-foreground text-lg">
@@ -20,6 +19,6 @@ export default function ProjectsPage() {
       </header>
 
       <ProjectList projects={PROJECTS} />
-    </main>
+    </div>
   );
 }

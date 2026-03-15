@@ -8,5 +8,6 @@ export interface INavbarItem{
 }
 export const navbarItems: INavbarItem[]  = [
     {label: "Portfolio", href:ROUTES.Home},
-    {label: "Projects", href:ROUTES.Projects}
+    {label: "Projects", href:ROUTES.Projects},
+    {label: "Resume", href:ROUTES.Resume}
 ];
